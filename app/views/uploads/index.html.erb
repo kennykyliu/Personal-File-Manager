@@ -1,0 +1,14 @@
+<h1>Image List</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>File Name</th>
+        </tr>
+    </thead>
+    <% @uploads.each do |upload| %>
+        <tr>
+            <td width="400px"><%= upload.key.split('/')[1] %></td>
+            <td><%= button_to "Download", downloads_path(:name => upload.key), method: :post %></td>
+        </tr>
+    <% end %>
+</table> 
